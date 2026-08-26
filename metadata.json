@@ -1,0 +1,6 @@
+{
+  "name": "EPITOME TRADERS",
+  "description": "EPITOME TRADERS - Next-generation trading platform with Accumulators and Rise/Fall options powered by Deriv",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

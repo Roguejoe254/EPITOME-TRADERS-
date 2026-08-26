@@ -1,0 +1,136 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+    
+    /* Light mode colors with distinctive royal purple theme */
+    --primary: 147 51 234; /* Purple 600 */
+    --accent: 245 243 255; /* Purple 50 */
+    --background: 255 255 255;
+    --border: 233 228 245;
+    --card: 255 255 255;
+    --card-foreground: 23 15 38;
+    --destructive: 225 29 72;
+    --destructive-foreground: 254 252 252;
+    --accent-foreground: 107 33 168; /* Purple 800 */
+    --foreground: 23 15 38;
+    --input: 147 51 234 / 0.12;
+    --muted: 247 245 252;
+    --popover: 255 255 255;
+    --popover-foreground: 23 15 38;
+    --primary-foreground: 255 255 255;
+    --ring: 168 85 247;
+    --secondary: 245 243 255;
+    --secondary-foreground: 107 33 168;
+    --muted-foreground: 112 101 133;
+    --chart-1: 147 51 234;
+    --chart-2: 13 148 136;
+    --chart-3: 79 70 229;
+    --chart-4: 168 85 247;
+    --chart-5: 236 72 153;
+    --buy-background: 16 185 129;
+    --buy-foreground: 255 255 255;
+    --sell-background: 225 29 72;
+    --sell-foreground: 255 255 255;
+    --button-black: 23 15 38;
+    --button-black-foreground: 255 255 255;
+    --button-white: 255 255 255;
+    --button-white-foreground: 23 15 38;
+    --alpha-10: 255 255 255 / 0.9;
+    --alpha-20: 255 255 255 / 0.8;
+    --alpha-30: 255 255 255 / 0.7;
+    --alpha-40: 255 255 255 / 0.6;
+    --alpha-50: 255 255 255 / 0.5;
+    --alpha-60: 255 255 255 / 0.4;
+    --alpha-70: 255 255 255 / 0.3;
+    --alpha-80: 255 255 255 / 0.2;
+    --alpha-90: 255 255 255 / 0.1;
+    --ring-offset: 255 255 255;
+    --alpha-5: 255 255 255 / 0.95;
+    --outline: 168 85 247 / 0.4;
+    --dark:input: 255 255 255 / 0;
+    --destructive-20: 225 29 72 / 0.2;
+    --destructive-40: 225 29 72 / 0.4;
+    --outline-10: 168 85 247 / 0.1;
+    --blue-500: 147 51 234;
+    --buy-20: 16 185 129 / 0.2;
+    --sell-20: 225 29 72 / 0.2;
+    --section-message: 168 85 247 / 0.16;
+    --border-focus: 147 51 234;
+    --border-focus-destructive: 225 29 72;
+    --button-blackwhite: 23 15 38;
+    --button-blackwhite-foreground: 255 255 255;
+    --checkmark-foreground: 255 255 255;
+    --checkmark: 147 51 234;
+  }
+
+  .dark {
+    /* Dark mode colors with deep obsidian and rich purple neon accents */
+    --primary: 168 85 247; /* Purple 500 */
+    --accent-foreground: 243 232 255;
+    --background: 15 12 24; /* Rich deep purple/obsidian background */
+    --border: 255 255 255 / 0.12;
+    --card: 23 18 36;
+    --accent: 35 27 56;
+    --card-foreground: 255 255 255;
+    --destructive: 244 63 94;
+    --destructive-foreground: 254 252 252;
+    --foreground: 250 245 255;
+    --input: 255 255 255 / 0.1;
+    --muted: 31 24 48;
+    --popover: 28 22 44;
+    --popover-foreground: 255 255 255;
+    --primary-foreground: 255 255 255;
+    --ring: 192 132 252;
+    --secondary: 35 27 56;
+    --secondary-foreground: 243 232 255;
+    --muted-foreground: 175 163 199;
+    --chart-1: 168 85 247;
+    --chart-2: 20 184 166;
+    --chart-3: 244 63 94;
+    --chart-4: 192 132 252;
+    --chart-5: 236 72 153;
+    --button-black: 15 12 24;
+    --button-black-foreground: 255 255 255;
+    --button-white: 255 255 255;
+    --button-white-foreground: 15 12 24;
+    --alpha-10: 0 0 0 / 0.9;
+    --alpha-20: 0 0 0 / 0.8;
+    --alpha-30: 0 0 0 / 0.7;
+    --alpha-40: 0 0 0 / 0.6;
+    --alpha-50: 0 0 0 / 0.5;
+    --alpha-60: 0 0 0 / 0.4;
+    --alpha-70: 0 0 0 / 0.3;
+    --alpha-80: 0 0 0 / 0.2;
+    --alpha-90: 0 0 0 / 0.1;
+    --ring-offset: 15 12 24;
+    --alpha-5: 0 0 0 / 0.95;
+    --outline: 168 85 247 / 0.5;
+    --dark:input: 0 0 0 / 0.1;
+    --destructive-20: 244 63 94 / 0.4;
+    --destructive-40: 244 63 94 / 0.6;
+    --outline-10: 168 85 247 / 0.2;
+    --blue-500: 168 85 247;
+    --buy-20: 16 185 129 / 0.4;
+    --sell-20: 244 63 94 / 0.4;
+    --section-message: 168 85 247 / 0.25;
+    --border-focus: 192 132 252;
+    --border-focus-destructive: 244 63 94;
+    --button-blackwhite: 255 255 255;
+    --button-blackwhite-foreground: 15 12 24;
+    --checkmark-foreground: 15 12 24;
+    --checkmark: 192 132 252;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
