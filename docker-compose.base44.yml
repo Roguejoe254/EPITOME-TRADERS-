@@ -1,0 +1,35 @@
+# Base44 development environment for the Accumulator Options Trading App.
+#
+# Frontend-only Next.js 16 app (App Router). It talks to the Deriv public
+# WebSocket API directly from the browser, so there is no backend or database
+# service — only the web (dev server) service.
+#
+# Run: docker compose -f docker-compose.base44.yml up -d
+services:
+  web:
+    image: node:22
+    working_dir: /app
+    volumes:
+      # Bind-mount the cloned source so edits hot-reload without a rebuild.
+      - ./:/app
+      # Keep node_modules inside the container (not written to the host repo).
+      - /app/node_modules
+    # Install deps (npm workspaces + smartcharts asset copy via postinstall),
+    # then start the live-reload dev server bound to 0.0.0.0:3000.
+    command: sh -c "npm install && npm run dev"
+    ports:
+      - "3000:3000"
+    environment:
+      # Lets next.config.js derive the allowed dev origin for the preview host.
+      - BASE44_PUBLIC_HOST_SUFFIX=${BASE44_PUBLIC_HOST_SUFFIX}
+    env_file:
+      # Repo-level placeholders — app boots before credentials are provided.
+      - ./.env.base44-defaults
+      # Platform-managed secrets — LAST, always wins. Provided out-of-band.
+      - /run/base44/app.env
+    healthcheck:
+      test: ["CMD", "node", "-e", "fetch('http://localhost:3000/').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+      start_period: 90s

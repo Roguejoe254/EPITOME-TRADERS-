@@ -1,0 +1,37 @@
+{
+  "previewPort": 3000,
+  "healthPath": "/",
+  "startCommand": "docker compose -f docker-compose.base44.yml up -d",
+  "secrets": [
+    {
+      "name": "NEXT_PUBLIC_DERIV_APP_ID",
+      "description": "Deriv App ID from the App Registration dashboard (https://developers.deriv.com/dashboard/). Required for OAuth login and trading; the app renders live charts without it.",
+      "requiredAtBoot": false
+    },
+    {
+      "name": "NEXT_PUBLIC_DERIV_REDIRECT_URI",
+      "description": "OAuth redirect URI registered with the Deriv app. For this preview use https://3000-<BASE44_PUBLIC_HOST_SUFFIX>. Required for OAuth login.",
+      "requiredAtBoot": false
+    },
+    {
+      "name": "NEXT_PUBLIC_DERIV_APP_NAME",
+      "description": "In-app display name (header, tab title, favicon). Optional; defaults to 'EPITOME TRADERS'.",
+      "requiredAtBoot": false
+    },
+    {
+      "name": "NEXT_PUBLIC_DERIV_OAUTH_SCOPES",
+      "description": "Comma-separated OAuth scopes, e.g. 'trade,account_manage'. Optional.",
+      "requiredAtBoot": false
+    },
+    {
+      "name": "NEXT_PUBLIC_DERIV_REFERRAL_LINK",
+      "description": "Affiliate referral link shown to unauthenticated users. Optional.",
+      "requiredAtBoot": false
+    },
+    {
+      "name": "NEXT_PUBLIC_DERIV_ENV",
+      "description": "Deriv environment: 'production' (live endpoint) or 'preview' (staging). Optional; defaults to production.",
+      "requiredAtBoot": false
+    }
+  ]
+}
